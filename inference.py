@@ -1,6 +1,6 @@
 from v1 import match_books
 
-image_path = "examples/example_4.jpg"
+image_path = "examples/example_1.jpg"
 reference_images = {
     "book1": "examples/1.jpg",
     "book2": "examples/2.jpg",

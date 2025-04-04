@@ -61,7 +61,7 @@ def perspective_transform(image):
     
     return cv2.warpPerspective(image, matrix, (int(width), int(height)))
 
-def match_books(image_path, reference_images, output_path="output_1.jpg"):
+def match_books(image_path, reference_images, output_path="./examples/output_1.jpg"):
     # Load CLIP model
     device = "cuda" if torch.cuda.is_available() else "cpu"
     clip_model, _, preprocess = open_clip.create_model_and_transforms('ViT-B-32', pretrained='laion2b_s34b_b79k')
@@ -117,7 +117,7 @@ def match_books(image_path, reference_images, output_path="output_1.jpg"):
 
         # Put the detected file name as text
         text_position = (x1, y1 - 10 if y1 - 10 > 10 else y1 + 20)
-        cv2.putText(detected_img, detected_filename, text_position, font, font_scale, color, thickness)
+        cv2.putText(detected_img, best_clip_match, text_position, font, font_scale, color, thickness)
 
     cv2.imwrite(output_path, detected_img)
 
