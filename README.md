@@ -15,14 +15,16 @@ This project provides a tool to detect and match books in an image using YOLOv11
    ```bash
    pip install -r requirements.txt
    ```
-2. Download the YOLOv8 model (yolo11n-seg.pt) manually and place it in the project folder.
-3. Run the inference.py script to detect and match books:
+2. Install PyTorch manually (based on your CUDA version).
+   - Important: If you have CUDA 12.6 or newer, install a PyTorch version that supports up to CUDA 12.4 (as some packages might not be compatible with 12.6+).
+3. Download the YOLOv11 model (yolo11n-seg.pt) manually and place it in the project folder.
+4. Run the inference.py script to detect and match books:
     ```bash
     python inference.py
     ```
-4. The output image with detected books and their matches will be saved as output_1.jpg in the examples/ folder.
+5. The output image with detected books and their matches will be saved as output_1.jpg in the examples/ folder.
 
 ## Notes
-- The YOLOv8 model (yolo11n-seg.pt) is used for detecting books in the input image.
+- The YOLOv11 model (yolo11n-seg.pt) is used for detecting books in the input image.
 - CLIP is used to match detected books with reference images provided in the reference_images dictionary in inference.py.
 - Example images for testing are located in the examples/ folder.
